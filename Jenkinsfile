@@ -1,7 +1,7 @@
 pipeline {
   agent any
   tools {
-    maven 'Maven' 
+    maven 'maven' 
   }
   stages {
     stage ('Build') {
@@ -12,7 +12,7 @@ pipeline {
     stage ('Deploy') {
       steps {
         script {
-          deploy adapters: [tomcat8(credentialsId: 'tomcat_user', path: '', url: 'http://ec2-http:// ec2-54-190-113-205:8080/.compute-1.amazonaws.com:8080')], contextPath: '', onFailure: false, war: '**/*.war' 
+          deploy adapters: [tomcat8(credentialsId: 'tomcat_user', path: '', url: 'http://ec2-3-87-100-211.compute-1.amazonaws.com:8080')], contextPath: '', onFailure: false, war: '**/*.war' 
         }
       }
     }
